@@ -1,4 +1,5 @@
-<center><h2>Palette Compression</h2>
+<center>
+<h2>Palette Compression</h2>
 <h6>fork by Calamity34, original by volyomaS</h6>
 
 ---
@@ -11,6 +12,7 @@ For example:\
 DBSCAN is off by default. Warning: using DBSCAN on high resolution images will work for a long time.
 
 Source:\
-![Source img](https://github.com/Calamity34/palette_compression/raw/master/imgs/lenin.jpg)\
+<img src="https://github.com/Calamity34/palette_compression/raw/master/imgs/lenin.jpg" alt="Lenin in full colors" width="300">\
 KMeans with 7 colors:\
-![KMeans img](https://github.com/Calamity34/palette_compression/raw/master/imgs/lenin_kmeans_7.jpg)
+<img src="https://github.com/Calamity34/palette_compression/raw/master/imgs/lenin_kmeans_7.jpg" alt="Lenin in 7 colors" width="300">
+</center>
