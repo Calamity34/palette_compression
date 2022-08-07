@@ -10,7 +10,7 @@ def draw_picture(image, save=False, filename=""):
     plt.figure(figsize=(7, 5))
     plt.axis('off')
     if save:
-        plt.imsave(filename, new_image)
+        plt.imsave(filename, new_image, format='png')
     else:
         plt.imshow(new_image)
         plt.show()

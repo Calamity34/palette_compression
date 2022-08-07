@@ -14,5 +14,3 @@ Source:\
 <img src="imgs/armstrong.png" alt="Armstrong in full colors" width="350">\
 KMeans with 7 colors:\
 <img src="imgs/armstrong_kmeans_7.png" alt="Armstrong in 7 colors" width="350">
-
-**KNOWN BUG: jpegs have worse render quality**
