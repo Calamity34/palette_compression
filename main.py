@@ -12,7 +12,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', nargs='?')
     parser.add_argument('pcount', nargs='?', default='2')
-    parser.add_argument('dbscan', nargs='?', default='no')
+    parser.add_argument('dbscan', nargs='?', default='n')
     args = parser.parse_args(sys.argv[1:])
 
     # filepath validate
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     new_filename = args.filepath[:dot_ind] + "_kmeans" + f"_{args.pcount}" + args.filepath[dot_ind:]
     painting.draw_picture(new_img, save=True, filename=new_filename)
     # DBSCAN if needed and save
-    if args.dbscan == "yes":
+    if args.dbscan == "y" or args.dbscan == "Y":
         DB_model = DBSCAN(n_jobs=-1)
         y_DB = DB_model.fit_predict(X)
         k = pd.Series(y_DB).nunique()
