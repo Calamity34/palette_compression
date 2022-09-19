@@ -1,1 +1,6 @@
-__pycache__/
+*
+
+!imgs/
+!main.py
+!painting.py
+!README.md
