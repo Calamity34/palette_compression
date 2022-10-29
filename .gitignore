@@ -1,6 +1,1 @@
-*
-!imgs/
-!main.py
-!painting.py
-!requirements.txt
-!README.md
+__pycache__/
