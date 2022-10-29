@@ -5,10 +5,11 @@ import cv2
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.cluster import DBSCAN
-
+from time import time
 
 if __name__ == "__main__":
     # arguments parse
+    delta = time()
     parser = argparse.ArgumentParser()
     parser.add_argument('filepath', nargs='?')
     parser.add_argument('pcount', nargs='?', default='2')
@@ -17,6 +18,7 @@ if __name__ == "__main__":
 
     # filepath validate
     img = cv2.imread(args.filepath)
+    print(f"Read file after {time() - delta:0.3f}s")
     if img is None:
         exit("This file doesn't exist")
 
@@ -29,7 +31,9 @@ if __name__ == "__main__":
     X = img.reshape((x*y, z))
     KM_model = KMeans(n_clusters=int(args.pcount))
     y_KM = KM_model.fit_predict(X)
+    print(f"Model trained after {time() - delta:0.3f}s")
     new_img = painting.fill_color(X, y_KM).reshape((x, y, z))
+    print(f"Colors averaged out after {time() - delta:0.3f}s")
     dot_ind = args.filepath.rfind(".")
     new_filename = args.filepath[:dot_ind] + "_kmeans" + f"_{args.pcount}" + args.filepath[dot_ind:]
     painting.draw_picture(new_img, save=True, filename=new_filename)
@@ -44,4 +48,4 @@ if __name__ == "__main__":
         painting.draw_picture(new_img, save=True, filename=new_filename)
 
     # exit
-    print("Done")
+    print(f"Done in {time() - delta:0.3f}s")
