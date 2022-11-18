@@ -8,15 +8,19 @@
 
 ---
 This script can compress the color palette of your image using ML algorithms (KMeans and DBSCAN).\
-You can run this script from the console:\
-`python main.py <filename> [colors=2] [use DBSCAN=N/y]`
+
+Installation requires you to have `poetry` installed via `pip`, to install you need to
+run `poetry install` in the folder, then `poetry shell` to get into the venv.
+
+You can run this script like this:\
+`python -m palette_compression <filename> [colors=2] [use DBSCAN=N/y]`
 
 For example:\
-`python main.py armstrong.png 7`
+`python -m palette_compression armstrong.png 7`
 <details>
 <summary><b>DBScan is broken</b></summary>
 
-> DBSCAN is currently broken. Images have artifacts, if you can fix it - PLEASE drop a PR.  
+> DBSCAN method is currently broken. Images have artifacts, if you can fix it - PLEASE drop a PR.  
 > Here's a comparison of timings, also look in the [`imgs/`](imgs/) folder to see the results:  
 > ![difference](imgs/db_km_difference.png)
 </details>

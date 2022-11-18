@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "palette-compression"
+version = "1.0.0"
+description = "Compressing colors on images using KMeans"
+authors = ["calamity <clmty@vk.com>"]
+readme = "README.md"
+packages = [{include = "palette_compression"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+matplotlib = "^3.6.2"
+numpy = "^1.23.4"
+opencv-python-headless = "^4.6.0.66"
+pandas = "^1.5.1"
+scikit-learn = "^1.1.3"
+colorama = "^0.4.6"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+mypy = "^0.991"
+types-colorama = "^0.4.15.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
